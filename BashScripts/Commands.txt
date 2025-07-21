@@ -1,0 +1,53 @@
+
+
+kubectl get nodes
+
+
+# Install Calico CNI Container Network Interface
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml
+curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml -0
+
+#Reemplazar contenido de 192.168.0.0/16 por 10.244.0.0/16
+
+kubectl create -f custom-resources.yaml
+
+kubectl get all -n kube-system
+
+
+kubectl get pods -n kube-system --watch
+
+kubectl get ns
+
+kubectl get pods -A
+
+kubectl get nodes
+
+sudo kubeadm create token
+
+kubeadm token create --print-join-command
+
+Min 56 turn off the SWAP partition
+
+kubectl get pods -A
+
+
+kubectl run nginx --image=nginx
+
+kubectl get pods
+
+kubectl get pods -A
+
+kubectl get pods -o wide
+
+kubectl get pods -A -o wide
+
+sudo vim /etc/ fstab
+
+#/swap.img none Swap
+
+
+
+kubectl get pods
+
+#EN CASO DE CAMBIO DE IP EN EL SETUP (WN CKA Y EN WORKER NODE)
+# kubeadmin reset
