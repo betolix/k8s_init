@@ -51,3 +51,7 @@ kubectl get pods
 
 #EN CASO DE CAMBIO DE IP EN EL SETUP (WN CKA Y EN WORKER NODE)
 # kubeadmin reset
+
+
+# Revisar estado de los kubelets
+systemctl status kubelet
