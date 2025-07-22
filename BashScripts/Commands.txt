@@ -55,3 +55,6 @@ kubectl get pods
 
 # Revisar estado de los kubelets
 systemctl status kubelet
+
+# Reiniciar kubelet
+systemctl restart kubelet
