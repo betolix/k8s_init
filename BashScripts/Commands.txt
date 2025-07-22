@@ -53,8 +53,28 @@ kubectl get pods
 # kubeadmin reset
 
 
-# Revisar estado de los kubelets
+# Review kubelet status
 systemctl status kubelet
 
-# Reiniciar kubelet
+# Restart kubelet
 systemctl restart kubelet
+
+# List nodes
+kubectl get nodes
+
+
+# List running containers in a Kubernetes environment using the Container Runtime Interface (CRI)
+crictl ps
+
+# Turn off SWAP in real time
+swapoff -a
+
+# Calico API server error
+
+# 1. ✅ Check the number of replicas:
+kubectl get deployment calico-apiserver -n calico-apiserver
+# 2. 🧹 Delete the bad pods manually:
+kubectl delete pod calico-apiserver-7968b85bd9-lkq78 -n calico-apiserver --force --grace-period=0
+kubectl delete pod calico-apiserver-7968b85bd9-zl29m -n calico-apiserver --force --grace-period=0
+# 3. Check for the updated information
+kubectl get pods -A -o wide
